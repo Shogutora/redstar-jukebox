@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
-import { Tasks } from '../api/tasks.js';
+import { Tracks } from '../api/tracks.js';
 
 import './task.js';
 import './body.html';
@@ -13,17 +13,17 @@ Template.body.onCreated(function bodyOnCreated() {
 });
 
 Template.body.helpers({
-  tasks() {
+  tracks() {
     const instance = Template.instance();
     if (instance.state.get('hideCompleted')) {
       // If hide completed is checked, filter tasks
-      return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
+      return Tracks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
     // Otherwise, return all of the tasks
-    return Tasks.find({}, { sort: { createdAt: -1 } });
+    return Tracks.find({}, { sort: { createdAt: -1 } });
   },
   incompleteCount() {
-    return Tasks.find({ checked: { $ne: true } }).count();
+    return Tracks.find({ checked: { $ne: true } }).count();
   },
 });
 
