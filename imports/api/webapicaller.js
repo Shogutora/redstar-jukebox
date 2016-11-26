@@ -14,15 +14,18 @@ if (Meteor.isServer) {
 
             //var items = results.data.tracks.items[0];
 
-
             var length = 5;
             for (i = 0; i < length; i++) {
                 var songname = results.data.tracks.items[i].name;
                 var artist = results.data.tracks.items[i].artists[0].name;
+                var thumbnail = results.data.tracks.items[i].album.images[2];
                 var songid = results.data.tracks.items[i].id;
             }
 
-            //console.log("I am here.");
+
+           // console.log(itm);
+
+            console.log("I am here.");
         }
     });
 }
