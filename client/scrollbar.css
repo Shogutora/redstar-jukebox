@@ -5,7 +5,7 @@ Modules - reusable parts of our design
 -------------------------------- */
 .cd-container {
     /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-    width: 90%;
+    width: 95%;
     max-width: 1170px;
     margin: 0 auto;
 }
@@ -27,7 +27,6 @@ Main components
     position: relative;
     padding: 2em 0;
     margin-top: 2em;
-    margin-bottom: 2em;
 }
 #cd-timeline::before {
     /* this is the vertical line */
@@ -48,6 +47,14 @@ Main components
         left: 50%;
         margin-left: -2px;
     }
+}
+
+
+.cd-timeline-horizontal-line {
+    background: white;
+    width: 100px;
+    height: 1px;
+    border: none;
 }
 
 .cd-timeline-block {
@@ -81,10 +88,9 @@ Main components
     position: absolute;
     top: 0;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 .cd-timeline-img img {
     display: block;
@@ -107,10 +113,12 @@ Main components
 }
 @media only screen and (min-width: 1170px) {
     .cd-timeline-img {
-        width: 60px;
-        height: 60px;
+        width: 14px;
+        height: 14px;
+        background-color: white;
         left: 50%;
-        margin-left: -30px;
+        margin-left: -7px;
+        margin-top: 23px;
         /* Force Hardware Acceleration in WebKit */
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;
@@ -186,10 +194,8 @@ Main components
 .cd-timeline-content {
     position: relative;
     margin-left: 60px;
-    background: white;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 0.25em;
-    padding: 1em;
-    box-shadow: 0 3px 0 #d7e4ed;
 }
 .cd-timeline-content:after {
     content: "";
@@ -197,18 +203,17 @@ Main components
     clear: both;
 }
 .cd-timeline-content h2 {
-    color: #303e49;
+    color: white;
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
-    font-size: 13px;
-    font-size: 0.8125rem;
+    font-size: 14px;
 }
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
     display: inline-block;
 }
 .cd-timeline-content p {
-    margin: 1em 0;
     line-height: 1.6;
+    color: rgba(255,255,255,0.5);
 }
 .cd-timeline-content .cd-read-more {
     float: right;
@@ -237,12 +242,10 @@ Main components
 }
 @media only screen and (min-width: 768px) {
     .cd-timeline-content h2 {
-        font-size: 20px;
-        font-size: 1.25rem;
+        font-size: 16px;
     }
     .cd-timeline-content p {
-        font-size: 16px;
-        font-size: 1rem;
+        font-size: 14px;
     }
     .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
         font-size: 14px;
@@ -253,7 +256,7 @@ Main components
     .cd-timeline-content {
         margin-left: 0;
         padding: 1.6em;
-        width: 45%;
+        width: 35%;
     }
     .cd-timeline-content::before {
         top: 24px;
@@ -264,10 +267,22 @@ Main components
     .cd-timeline-content .cd-read-more {
         float: left;
     }
+
+    .cd-timeline-content .cd-timeline-thumbnail {
+        height: 30px;
+        width: 30px;
+        background: lightgray;
+        border: 2px solid white;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border-radius: 15px;
+        outline: none;
+    }
+
     .cd-timeline-content .cd-date {
         position: absolute;
         width: 100%;
-        left: 122%;
+        left: 140%;
         top: 6px;
         font-size: 16px;
         font-size: 1rem;
@@ -287,7 +302,7 @@ Main components
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
         left: auto;
-        right: 122%;
+        right: 140%;
         text-align: right;
     }
     .cssanimations .cd-timeline-content.is-hidden {
