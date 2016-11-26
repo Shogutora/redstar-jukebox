@@ -23,7 +23,7 @@ if (Meteor.isServer) {
                     var tempTrack = {};
                     tempTrack.songname = results.data.tracks.items[i].name;
                     tempTrack.artist = results.data.tracks.items[i].artists[0].name;
-                    tempTrack.thumbnail = results.data.tracks.items[i].album.images[2];
+                    tempTrack.thumbnail = results.data.tracks.items[i].album.images[0];
                     tempTrack.songid = results.data.tracks.items[i].id;
                     tempTracks.push(tempTrack);
                 }

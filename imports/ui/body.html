@@ -1,24 +1,25 @@
 <body>
 <div class="gradient">
-  <div class="container">
-    <header>
-      <h1>Playlist name</h1>
+    <div class="container">
+        <header>
+            <h1>Playlist name</h1>
 
-        <form class="new-task">
-          <input class="searchbar" type="text" name="text" placeholder="Type to add new tasks" />
-        </form>
+            <form class="new-task">
+                <input class="searchbar" type="text" name="text" placeholder="Type to add new tasks"/>
+            </form>
 
-    </header>
+        </header>
 
-    <ul>
-      {{#each tempTracks}}
-        {{> track}}
-      {{/each}}
-    </ul>
-
-   {{#each tracks}}
-       {{> playlistitem}}
-   {{/each}}
-  </div>
+        <ul>
+            {{#each tempTracks}}
+                {{> track}}
+            {{/each}}
+        </ul>
+        <section id="cd-timeline" class="cd-container">
+            {{#each tracks}}
+                {{> playlistitem}}
+            {{/each}}
+        </section>
+    </div>
 </div>
 </body>

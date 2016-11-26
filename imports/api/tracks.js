@@ -7,7 +7,7 @@ export const Tracks = new Mongo.Collection('Tracks');
 if (Meteor.isServer) {
     // This code only runs on the server
     // Only publish Tracks that are public or belong to the current user
-    Meteor.publish('Tracks', function tracksPublication() {
+    Meteor.publish('tracks', function tracksPublication() {
         return Tracks.find({});
     });
 }

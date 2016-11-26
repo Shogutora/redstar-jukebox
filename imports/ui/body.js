@@ -14,7 +14,7 @@ import './playlistitem.html'
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
-    Meteor.subscribe('tasks');
+    Meteor.subscribe('tracks');
 });
 
 Template.body.helpers({
