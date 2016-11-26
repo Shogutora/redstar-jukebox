@@ -45,7 +45,6 @@ header {
     overflow: hidden;
     z-index: 999;
     position: absolute;
-    background: #fff;
     width: 600px;
 }
 
