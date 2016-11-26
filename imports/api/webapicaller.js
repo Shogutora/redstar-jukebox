@@ -27,8 +27,7 @@ if (Meteor.isServer) {
                     tempTrack.songid = results.data.tracks.items[i].id;
                     tempTrack.time = Math.round(results.data.tracks.items[i].duration_ms/1000);
 
-                    var tmp = results.data.tracks.items[i].artists[0].href;
-                    var tmp2 = Meteor.http.call("GET", tmp);
+                    var tmp2 = Meteor.http.call("GET", results.data.tracks.items[i].artists[0].href);
                     tempTrack.thumbnail = tmp2.data.images[0];
 
                     tempTracks.push(tempTrack);
