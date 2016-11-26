@@ -3,10 +3,12 @@ import {Template} from 'meteor/templating';
 import {ReactiveDict} from 'meteor/reactive-dict';
 
 import {Tracks} from '../api/tracks.js';
+import {Session} from 'meteor/session';
 
 
 import './task.js';
 import './body.html';
+import './track.html';
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
@@ -26,6 +28,11 @@ Template.body.helpers({
     incompleteCount() {
         return Tracks.find({checked: {$ne: true}}).count();
     },
+    tempTracks(){
+        var tracks = Session.get("tempTracks");
+        console.log(tracks);
+        return tracks;
+    }
 });
 
 Template.body.events({
@@ -38,7 +45,17 @@ Template.body.events({
         const text = target.text.value;
 
         // Insert a task into the collection
-        Meteor.call('querySpotify', text);
+        var tracks = Meteor.call('querySpotify', text, function(err, data) {
+            if (err)
+                console.log(err);
+
+            console.log(data);
+            Session.set('tempTracks', data);
+
+
+        });
+
+
 
         // Clear form
         target.text.value = '';
