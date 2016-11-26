@@ -1,6 +1,12 @@
 /* CSS declarations go here */
+
+@font-face {
+    font-family: 'Circular Std';
+    src: url('https://sp-bootstrap.global.ssl.fastly.net/7.2.0/fonts/circular-light.woff2') format('woff2'), /* Super Modern Browsers */
+}
+
 body {
-  font-family: sans-serif;
+    font-family: 'Circular Std', "Helvetica Neue", sans-serif;
 
   position: absolute;
   top: 0;
