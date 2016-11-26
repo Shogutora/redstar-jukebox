@@ -15,7 +15,7 @@ if (Meteor.isServer) {
 Meteor.methods({
 
     'tracks.insert'(song) {
-        console.log(song);
+        //console.log(song);
         Tracks.insert(song);
     },
     'tracks.remove'(trackId) {

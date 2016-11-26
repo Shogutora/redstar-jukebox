@@ -25,6 +25,7 @@ if (Meteor.isServer) {
                     tempTrack.artist = results.data.tracks.items[i].artists[0].name;
                     tempTrack.thumbnail = results.data.tracks.items[i].album.images[0];
                     tempTrack.songid = results.data.tracks.items[i].id;
+                    tempTrack.time = Math.round(results.data.tracks.items[i].duration_ms/1000);
                     tempTracks.push(tempTrack);
                 }
 
