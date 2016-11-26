@@ -4,7 +4,7 @@
     <header>
       <h1>Playlist name</h1>
 
-
+        <div>22 songs</div>
 
         <form class="new-task">
           <input class="searchbar" type="text" name="text" placeholder="Type to add new tasks" />
@@ -12,14 +12,20 @@
 
     </header>
 
-    <ul>
+    <table>
       {{#each tracks}}
         {{> task}}
       {{/each}}
-        <li>Example track 1</li>
-        <li>Example track 2</li>
-        <li>Example track 3</li>
-    </ul>
+        <tr>
+            <th>Example track 1</th>
+            <th>Example track 1</th>
+        </tr>
+        <tr>
+            <th>Example track 1</th>
+            <th>Example track 1</th>
+        </tr>
+    </table>
+
   </div>
 </div>
 </body>
