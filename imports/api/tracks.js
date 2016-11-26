@@ -18,6 +18,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
+
     'tracks.insert'(text) {
         check(text, String);
 
