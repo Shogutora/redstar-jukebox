@@ -12,8 +12,12 @@ Template.track.events({
         // Add the song to the Tracks database
         Meteor.call('tracks.insert',this);
 
-
     }
 });
 
+Template.track.helpers({
+    updateTimer() {
+
+    }
+});
 

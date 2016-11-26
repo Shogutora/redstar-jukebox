@@ -1,9 +1,12 @@
 <body>
 <div class="gradient">
+    <div>
+        <button class="loginOutButton">Sign out</button>
+    </div>
   <div class="container">
     <header>
       <h1>Playlist name</h1>
-        <p class="now-playing-small-text">22 songs  •  3 hours and 2 minutes</p>
+        <p class="now-playing-small-text">{{ numberOfSongs }} • {{ totalHours }} and {{ totalMinutes }}</p>
         <form class="new-task">
           <input class="searchbar" type="text" name="text" placeholder="Search for tracks to add" />
         </form>
@@ -17,7 +20,7 @@
         </ul>
 
         <div class="now-playing">
-            <span class="now-playing-small-text" style="font-size: 12px">NOW PLAYING</span>
+            <span class="now-playing-small-text" style="font-size: 12px;">NOW PLAYING</span>
             <h2 class="now-playing-big-text">Hips don't lie</h2>
             <span class="now-playing-small-text">Shakira</span>
             <img class="now-playing-img" />

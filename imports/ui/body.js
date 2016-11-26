@@ -71,3 +71,4 @@ Template.body.events({
         instance.state.set('hideCompleted', event.target.checked);
     },
 });
+

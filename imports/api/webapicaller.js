@@ -31,6 +31,7 @@ if (Meteor.isServer) {
                     tempTrack.thumbnail = tmp2.data.images[0];
 
                     tempTracks.push(tempTrack);
+                    console.log(tempTrack);
 
 
                 }

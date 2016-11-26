@@ -26,6 +26,7 @@ Main components
 #cd-timeline {
     position: relative;
     padding-top: 50px;
+    margin-top: 150px;
 }
 #cd-timeline::before {
     /* this is the vertical line */
