@@ -36,6 +36,17 @@ header {
   padding: 20px;
     padding-top: 80px;
   position: relative;
+    text-align: center;
+    padding-bottom: 11px;
+}
+
+.tempTracks {
+    background: transparent;
+    overflow: hidden;
+    z-index: 999;
+    position: absolute;
+    background: #fff;
+    width: 600px;
 }
 
 #login-buttons {
@@ -46,9 +57,7 @@ h1 {
   font-size: 3em;
   margin: 0;
     color: white;
-  margin-bottom: 10px;
   display: inline-block;
-  margin-right: 1em;
 }
 
 form {
@@ -74,7 +83,7 @@ form {
 }
 
 .new-task input:focus{
-    background-color:rgba(255, 255, 255, 0.3);
+    background-color:rgba(0,0,0, 0.3);
     outline: 0;
 }
 
@@ -89,10 +98,6 @@ table {
     background-color:rgba(255, 255, 255, 0.2);
 }
 
-th {
-
-}
-
 .delete {
   float: right;
   font-weight: bold;
@@ -102,28 +107,32 @@ th {
   position: relative;
 }
 
+ul {
+    margin-top: 0;
+    margin-right: 40px;
+}
+
 li {
   position: relative;
   list-style: none;
   padding: 15px;
-  border-bottom: #eee solid 1px;
+    background: rgba(0,0,0,0.4);
+  border-bottom: rgba(255,255,255,0.2) solid 1px;
 }
 
-li .text {
-  margin-left: 10px;
+li:hover {
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
 }
 
-li.checked {
-  color: #888;
+.songname {
+    color: white;
 }
 
-li.checked .text {
-  text-decoration: line-through;
-}
-
-li.private {
-  background: #eee;
-  border-color: #ddd;
+.artist {
+    color: rgba(255,255,255,0.5);
+    margin-left: 6px;
+    font-size: 12px;
 }
 
 header .hide-completed {
@@ -149,3 +158,36 @@ header .hide-completed {
   }
 }
 
+.now-playing {
+    text-align: center;
+}
+
+.now-playing-small-text {
+    color: rgba(255,255,255,0.5);
+}
+
+.now-playing-big-text {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+.now-playing-img {
+    height:70px;
+    width:70px;
+    background:white;
+    border-radius: 35px;
+    border: none;
+    margin-top: 12px;
+    margin-right: auto;
+    margin-left:auto;
+    display: block;
+}
+
+#canvas {
+    opacity:1;
+    z-index: 100;
+    position: absolute;
+    display: block;
+    top: 3px;
+}
