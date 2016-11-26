@@ -14,11 +14,11 @@ if (Meteor.isServer) {
             //first five results, name of the song, artist
 
             //var items = results.data.tracks.items[0];
-            console.log(results);
+            //console.log(results);
             var tempTracks = [];
             var length = 5;
             if (results.data.tracks.items.length > 0){
-                console.log("Got some results..");
+                //console.log("Got some results..");
                 for (i = 0; i < length; i++) {
                     var tempTrack = {};
                     tempTrack.songname = results.data.tracks.items[i].name;

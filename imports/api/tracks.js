@@ -19,20 +19,9 @@ if (Meteor.isServer) {
 
 Meteor.methods({
 
-    'tracks.insert'(text) {
-        check(text, String);
+    'tracks.insert'(song) {
 
-        // Make sure the user is logged in before inserting a task
-        if (!this.userId) {
-            throw new Meteor.Error('not-authorized');
-        }
-
-        Tracks.insert({
-            text,
-            createdAt: new Date(),
-            owner: this.userId,
-            username: Meteor.users.findOne(this.userId).username,
-        });
+        Tracks.insert({song});
     },
     'tracks.remove'(trackId) {
         check(trackId, String);
