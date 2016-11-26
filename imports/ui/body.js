@@ -7,6 +7,7 @@ import {Session} from 'meteor/session';
 
 
 import './task.js';
+import './track.js';
 import './body.html';
 import './track.html';
 
@@ -46,9 +47,9 @@ Template.body.events({
 
         // Insert a task into the collection
         var tracks = Meteor.call('querySpotify', text, function(err, data) {
-            if (err)
+            if (err) {
                 console.log(err);
-
+            }
             console.log(data);
             Session.set('tempTracks', data);
 

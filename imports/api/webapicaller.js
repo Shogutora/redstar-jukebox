@@ -14,20 +14,22 @@ if (Meteor.isServer) {
             //first five results, name of the song, artist
 
             //var items = results.data.tracks.items[0];
+            console.log(results);
             var tempTracks = [];
             var length = 5;
-            for (i = 0; i < length; i++) {
-                var tempTrack = {};
-                tempTrack.songname = results.data.tracks.items[i].name;
-                tempTrack.artist = results.data.tracks.items[i].artists[0].name;
-                tempTrack.thumbnail = results.data.tracks.items[i].album.images[2];
-                tempTrack.songid = results.data.tracks.items[i].id;
-                tempTracks.push(tempTrack);
+            if (results.data.tracks.items.length > 0){
+                console.log("Got some results..");
+                for (i = 0; i < length; i++) {
+                    var tempTrack = {};
+                    tempTrack.songname = results.data.tracks.items[i].name;
+                    tempTrack.artist = results.data.tracks.items[i].artists[0].name;
+                    tempTrack.thumbnail = results.data.tracks.items[i].album.images[2];
+                    tempTrack.songid = results.data.tracks.items[i].id;
+                    tempTracks.push(tempTrack);
+                }
+
             }
-
             return tempTracks;
-
-
         }
     });
 }
