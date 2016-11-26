@@ -16,33 +16,9 @@
       {{/each}}
     </ul>
 
-    <section id="cd-timeline" class="cd-container">
-        <div class="cd-timeline-block">
-            <div class="cd-timeline-img">
-            </div> <!-- cd-timeline-img -->
-
-            <div class="cd-timeline-content">
-
-                <img class="cd-timeline-thumbnail" src="../../client/img/shakira.jpg">
-                <span class="cd-timeline-horizontal-line"></span>
-                <h2>Loose yourself</h2>
-                <p>Eminem</p>
-                <span class="cd-date">3:08</span>
-            </div> <!-- cd-timeline-content -->
-        </div> <!-- cd-timeline-block -->
-
-        <div class="cd-timeline-block">
-            <div class="cd-timeline-img">
-            </div> <!-- cd-timeline-img -->
-
-            <div class="cd-timeline-content">
-                <h2>Oops I did it again</h2>
-                <p>Britney Spears</p>
-                <span class="cd-date">4:12</span>
-            </div> <!-- cd-timeline-content -->
-        </div> <!-- cd-timeline-block -->
-
-    </section>
+   {{#each tracks}}
+       {{> playlistitem}}
+   {{/each}}
   </div>
 </div>
 </body>

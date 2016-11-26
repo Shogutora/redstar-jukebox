@@ -10,6 +10,7 @@ import './task.js';
 import './track.js';
 import './body.html';
 import './track.html';
+import './playlistitem.html'
 
 Template.body.onCreated(function bodyOnCreated() {
     this.state = new ReactiveDict();
@@ -18,12 +19,6 @@ Template.body.onCreated(function bodyOnCreated() {
 
 Template.body.helpers({
     tracks() {
-        const instance = Template.instance();
-        if (instance.state.get('hideCompleted')) {
-            // If hide completed is checked, filter tasks
-            return Tracks.find({checked: {$ne: true}}, {sort: {createdAt: -1}});
-        }
-        // Otherwise, return all of the tasks
         return Tracks.find({}, {sort: {createdAt: -1}});
     },
     incompleteCount() {
