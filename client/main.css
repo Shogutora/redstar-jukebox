@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Circular Std';
-    src: url('https://sp-bootstrap.global.ssl.fastly.net/7.2.0/fonts/circular-light.woff2') format('woff2'), /* Super Modern Browsers */
+    src: url('https://sp-bootstrap.global.ssl.fastly.net/7.2.0/fonts/circular-light.woff2') format('woff2'): /* Super Modern Browsers */
 }
 
 body {
@@ -29,13 +29,11 @@ body {
   max-width: 600px;
   margin: 0 auto;
   min-height: 100%;
-  background: white;
 }
 
 header {
-  background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
-  padding: 20px 15px 15px 15px;
+  padding: 20px;
+    padding-top: 80px;
   position: relative;
 }
 
@@ -43,9 +41,17 @@ header {
   display: block;
 }
 
+.searchbar {
+    height: 30px;
+    border-radius: 15px;
+    background: white;
+    color: white;
+}
+
 h1 {
-  font-size: 1.5em;
+  font-size: 3em;
   margin: 0;
+    color: white;
   margin-bottom: 10px;
   display: inline-block;
   margin-right: 1em;
