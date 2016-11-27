@@ -48,14 +48,30 @@ Main components
     }
 }
 
-
-.cd-timeline-horizontal-line {
+.cd-timeline-block:nth-child(odd) .cd-timeline-horizontal-line  {
+    position: absolute;
     background: white;
-    width: 100px;
+    left: 76px;
+    top: 47px;
+    width: 255px;
     height: 1px;
     border: none;
+    display: inline-block;
 }
 
+.cd-timeline-block:nth-child(even) .cd-timeline-horizontal-line  {
+    position: absolute;
+    background: white;
+    left: 0px;
+    top: 47px;
+    width: 255px;
+    height: 1px;
+    border: none;
+    display: inline-block;
+}
+.cd-timeline-block:nth-child(even) .cd-timeline-thumbnail {
+    float: right;
+}
 .cd-timeline-block {
     position: relative;
     margin: 2em 0;
@@ -117,7 +133,7 @@ Main components
         background-color: white;
         left: 50%;
         margin-left: -7px;
-        margin-top: 23px;
+        margin-top: 40px;
         /* Force Hardware Acceleration in WebKit */
         -webkit-transform: translateZ(0);
         -webkit-backface-visibility: hidden;
@@ -193,7 +209,6 @@ Main components
 .cd-timeline-content {
     position: relative;
     margin-left: 60px;
-    background: rgba(255, 255, 255, 0.2);
     border-radius: 0.25em;
 }
 .cd-timeline-content:after {
@@ -231,16 +246,6 @@ Main components
     padding: .8em 0;
     opacity: .7;
 }
-.cd-timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 16px;
-    right: 100%;
-    height: 0;
-    width: 0;
-    border: 7px solid transparent;
-    border-right: 7px solid white;
-}
 @media only screen and (min-width: 768px) {
     .cd-timeline-content h2 {
         font-size: 16px;
@@ -258,12 +263,6 @@ Main components
         margin-left: 0;
         padding: 1.6em;
         width: 35%;
-    }
-    .cd-timeline-content::before {
-        top: 24px;
-        left: 100%;
-        border-color: transparent;
-        border-left-color: white;
     }
     .cd-timeline-content .cd-read-more {
         float: left;
@@ -290,13 +289,6 @@ Main components
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content {
         float: right;
-    }
-    .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-        top: 24px;
-        left: auto;
-        right: 100%;
-        border-color: transparent;
-        border-right-color: white;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
         float: right;
