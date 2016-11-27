@@ -9,10 +9,12 @@
 
             <div class="horizontal-align">
                 <img class="cd-timeline-thumbnail" src="{{thumbnail.url}}">
-                <span class="cd-timeline-horizontal-line"></span>
+                <div class="cd-timeline-text">
+                    <h2 class="cd-timeline-songname">{{songname}}</h2>
+                    <p class="cd-timeline-artist">{{artist}}</p>
+                </div>
             </div>
-            <h2>{{songname}}</h2>
-            <p>{{artist}}</p>
+            <span class="cd-timeline-horizontal-line"></span>
             <span>{{time}}</span>
             <!--<span class="cd-date">3:08</span>-->
         </div> <!-- cd-timeline-content -->

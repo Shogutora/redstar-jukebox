@@ -78,13 +78,13 @@ form {
   width: 100%;
   padding-right: 80px;
   font-size: 1em;
-    background-color:rgba(255, 255, 255, 0.2);
+    background-color:rgba(0,0,0, 0.2);
     color: white;
 
 }
 
 .new-task input:focus{
-    background-color:rgba(0,0,0, 0.3);
+    background-color:rgba(0,0,0, 0.1);
     outline: 0;
 }
 
@@ -117,12 +117,12 @@ li {
   position: relative;
   list-style: none;
   padding: 15px;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.3);
   border-bottom: rgba(255,255,255,0.2) solid 1px;
 }
 
 li:hover {
-    background: rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.2);
     cursor: pointer;
 }
 
@@ -178,6 +178,55 @@ header .hide-completed {
     border-color: white;
 }
 
+.dropbtn {
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 1px;
+    background-color: transparent;
+    outline: none;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid;
+    border-color: rgba(255,255,255,0.5);
+    border-radius: 15px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    left: -85px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 1px rgba(255,255,255,0.2) solid;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0,0,0,0.15);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: white;
+    border-color: white;
+}
+
 .now-playing {
     text-align: center;
     position: absolute;
@@ -207,12 +256,4 @@ header .hide-completed {
     margin-right: auto;
     margin-left:auto;
     display: block;
-}
-
-#canvas {
-    opacity:1;
-    z-index: 100;
-    position: absolute;
-    display: block;
-    top: 3px;
 }

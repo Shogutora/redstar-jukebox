@@ -36,7 +36,7 @@ Main components
     left: 18px;
     height: 100%;
     width: 4px;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.2);
 }
 @media only screen and (min-width: 1170px) {
     #cd-timeline {
@@ -57,6 +57,7 @@ Main components
     height: 1px;
     border: none;
     display: inline-block;
+    transition: all 1s;
 }
 
 .cd-timeline-block:nth-child(even) .cd-timeline-horizontal-line  {
@@ -70,8 +71,31 @@ Main components
     display: inline-block;
 }
 .cd-timeline-block:nth-child(even) .cd-timeline-thumbnail {
-    float: right;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
+.cd-timeline-block:nth-child(even) .cd-timeline-songname {
+    text-align: right;
+    margin-top: 58px;
+}
+.cd-timeline-block:nth-child(even) .cd-timeline-artist {
+    text-align: right;
+}
+.cd-timeline-block:nth-child(even) .cd-timeline-horizontal-line {
+    left: -50px;
+}
+
+.cd-timeline-artist{
+    animation-name: opacityOut;
+    animation-duration: 0.5s;
+}
+
+.cd-timeline-songname {
+    animation-name: opacityOut;
+    animation-duration: 0.5s;
+}
+
 .cd-timeline-block {
     position: relative;
     margin: 2em 0;
@@ -89,7 +113,7 @@ Main components
 }
 @media only screen and (min-width: 1170px) {
     .cd-timeline-block {
-        margin: 4em 0;
+        margin: 0 0;
     }
     .cd-timeline-block:first-child {
         margin-top: 0;
@@ -430,4 +454,29 @@ Main components
         -o-transform: translateX(0);
         transform: translateX(0);
     }
+}
+
+.horizontal-align {
+    transition-duration: 1s;
+}
+
+/* The animation code */
+@keyframes move {
+    from { margin-left: 0px; }
+    to { margin-left: 284px; }
+}
+
+translateRight {
+    transform: translateX(284px);
+}
+
+
+@keyframes opacityOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes lineDecrease {
+    from { width: 255px }
+    to { width: 0px; }
 }
