@@ -3,11 +3,13 @@
     <div class="gradient">
         <div class="container">
             <header>
-                {{> loginButtons}}
                 {{#if currentUser}}
+                    {{> loginButtons}}
                     <form class="set-playlist">
                         <input class="searchbar" type="text" name="text" placeholder="Give a name for the playlist:"/>
                     </form>
+                {{else}}
+                    <button class="login-spotify">Log in</button>
                 {{/if}}
             </header>
         </div>

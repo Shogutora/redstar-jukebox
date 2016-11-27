@@ -15,6 +15,7 @@ Template.mainLayout.onCreated(function bodyOnCreated() {
     console.log("hello");
     this.state = new ReactiveDict();
     Meteor.subscribe('playlists');
+
 });
 
 Template.mainLayout.helpers({

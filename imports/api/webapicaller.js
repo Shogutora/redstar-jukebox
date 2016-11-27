@@ -37,9 +37,19 @@ if (Meteor.isServer) {
             }
             return tempTracks;
         },
-        'storePlaylist': function (playlist) {
+        'createPlaylist': function (name) {
+            var user = Meteor.users.findOne({_id: this.userId});
 
-
+            Meteor.http.call("POST",
+                "https://api.spotify.com/v1/users/"+user.services.spotify.id+"/playlists/",
+                {data:{
+                    "name": name,
+                    "public": false
+                },
+                headers: {
+                    "Authorization": "Bearer "+user.services.spotify.accessToken
+                }},
+            );
         }
     });
 }

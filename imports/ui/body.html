@@ -1,7 +1,9 @@
 <template name="mainLayout">
     <body>
     <div class="gradient">
-        {{> loginButtons}}
+        {{#if currentUser}}
+            {{> loginButtons}}
+        {{/if}}
         <div style="float: right;">
             <span style="margin-left:15px; font-size: 12px; opacity: 0.5;">Listening on:</span>
             <div class="dropdown">
@@ -22,8 +24,6 @@
                         <input class="searchbar" type="text" name="text" placeholder="Search for tracks to add"/>
                     </form>
                 </header>
-
-
 
 
                 <ul class="tempTracks">
@@ -47,10 +47,8 @@
 
             {{else}}
                 <header>
-                    <h2>No session running!</h2>
-                    {{> loginButtons}}
+                    <h2>No playlist here!</h2>
                 </header>
-
             {{/if}}
         </div>
     </div>
