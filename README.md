@@ -1,12 +1,10 @@
-# Simple Todo List
+# Party jukebox
 
-The Meteor Tutorial app.
+A party playlist generator using Spotify connect API
 
-Use it to share a single todo list with your friends. The list updates on everyone's screen in real time, and you can make tasks private if you don't want others to see them.
+One clients token is used by the backend to create private playlists for that user.
 
-Learn how to build this app by following the [Meteor Tutorial](http://www.meteor.com/install).
-
-Read more about building apps with Meteor in the [Meteor Guide](http://guide.meteor.com).
+Other clients do not need to have Spotify account in order to add songs.
 
 ![Creating a playlist](create.png)
 
