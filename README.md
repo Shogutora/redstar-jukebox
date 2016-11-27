@@ -8,4 +8,6 @@ Learn how to build this app by following the [Meteor Tutorial](http://www.meteor
 
 Read more about building apps with Meteor in the [Meteor Guide](http://guide.meteor.com).
 
-![screenshot](screenshot.png)
+![Creating a playlist](create.png)
+
+![adding songs](interface.png)
