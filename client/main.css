@@ -308,3 +308,17 @@ header .hide-completed {
     width: 300px;
     left: 300px;
 }
+
+.login-spotify {
+    margin: 15px;
+    background-color: rgba(255,255,255,0.3);
+    outline: none;
+    overflow: hidden;
+    color: white;
+    border: none;
+    width: 400px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    padding:8px;
+}
