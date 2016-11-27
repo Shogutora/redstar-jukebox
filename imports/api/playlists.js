@@ -10,7 +10,7 @@ if (Meteor.isServer) {
     // Only publish Playlists that are public or belong to the current user
     Meteor.publish('playlists', function tracksPublication() {
         //console.log(this);
-        console.log(Meteor.users.findOne({_id: this.userId}));
+        //console.log(Meteor.users.findOne({_id: this.userId}));
         return Playlists.find({});
     });
 }
@@ -21,10 +21,11 @@ Meteor.methods({
         check(song, Object);
         //console.log(song);
         Playlists.upsert({name: plname}, {$addToSet: {tracks: song}});
+        Meteor.call("addSong",plname,song)
     },
     "Playlists.create" (name) {
         check(name,String);
-        Playlists.insert({name: name});
+        //console.log(name);
         Meteor.call("createPlaylist",name);
     }
 });

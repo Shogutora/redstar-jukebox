@@ -23,7 +23,7 @@ Template.mainLayout.helpers({
         return Playlists.findOne({name: Session.get("playListName")});
     },
     playList() {
-        if (Playlists.findOne({name: Session.get("playListName")})) {
+        if (Playlists.findOne({name: Session.get("playListName")}).tracks) {
             return Playlists.findOne({name: Session.get("playListName")}, {sort: {createdAt: -1}}).tracks;
         }
     },
@@ -34,6 +34,13 @@ Template.mainLayout.helpers({
     },
     playListName () {
         return Session.get("playListName");
+    },
+    playListLength () {
+        var playList = Playlists.findOne({name: Session.get("playListName")}, {sort: {createdAt: -1}});
+        if(playList.tracks){
+            return playList.tracks.length;
+        }
+
     }
 });
 
@@ -64,5 +71,9 @@ Template.mainLayout.events({
     'change .hide-completed input'(event, instance) {
         instance.state.set('hideCompleted', event.target.checked);
     },
+    'click .now-playing' (event) {
+        event.preventDefault();
+        Meteor.call("startPlaylist",Session.get("playListName"));
+    }
 });
 
