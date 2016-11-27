@@ -23,6 +23,7 @@ body {
 
 .gradient {
     width: 100%;
+    height: 100%;
     background: #3494E6; /* fallback for old browsers */
     background: -webkit-linear-gradient(to left, #3494E6 , #EC6EAD); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to left, #3494E6 , #EC6EAD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -256,4 +257,54 @@ header .hide-completed {
     margin-right: auto;
     margin-left:auto;
     display: block;
+}
+
+.set-playlist {
+    margin-top: 180px;
+}
+
+.playlist-name-input {
+    height: 50px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: white solid 1px;
+    outline: none;
+    width: 90%;
+    padding-right: 80px;
+    font-size: 30px;
+    background-color:transparent;
+    color: white;
+    font-family: 'Circular Std', "Helvetica Neue", sans-serif;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.2);
+}
+
+.single-login-button {float:right;
+    margin: 15px;
+    background-color: transparent;
+    outline: none;
+    overflow: hidden;
+    color: rgba(255,255,255,0.5);
+    border: 1px solid;
+    border-color: rgba(255,255,255,0.5);
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 12px;
+    padding:6px;
+}
+
+.single-login-button:hover {
+    color: white;
+    border-color: white;
+}
+
+.spotify-img {
+    position: absolute;
+    clip: rect(0px,100px,100px,0px);
+    width: 300px;
+    left: 300px;
 }

@@ -1,12 +1,13 @@
 <template name="setPlaylist">
     <body>
     <div class="gradient">
+        {{> loginButtons}}
         <div class="container">
             <header>
                 {{#if currentUser}}
                     {{> loginButtons}}
                     <form class="set-playlist">
-                        <input class="searchbar" type="text" name="text" placeholder="Give a name for the playlist:"/>
+                        <input class="playlist-name-input" type="text" name="text" placeholder="Type a name for the jukebox playlist..." autofocus autocomplete="off"/>
                     </form>
                 {{else}}
                     <button class="login-spotify">Log in</button>
