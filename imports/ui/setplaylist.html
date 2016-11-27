@@ -1,0 +1,16 @@
+<template name="setPlaylist">
+    <body>
+    <div class="gradient">
+        <div class="container">
+            <header>
+                {{> loginButtons}}
+                {{#if currentUser}}
+                    <form class="set-playlist">
+                        <input class="searchbar" type="text" name="text" placeholder="Give a name for the playlist:"/>
+                    </form>
+                {{/if}}
+            </header>
+        </div>
+    </div>
+    </body>
+</template>

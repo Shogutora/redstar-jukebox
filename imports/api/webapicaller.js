@@ -1,8 +1,5 @@
 import {Meteor} from 'meteor/meteor';
-import {Http} from 'meteor/http';
-import {Mongo} from 'meteor/mongo';
 import {check} from 'meteor/check';
-import {Session} from 'meteor/session';
 
 if (Meteor.isServer) {
     Meteor.methods({
@@ -39,6 +36,10 @@ if (Meteor.isServer) {
 
             }
             return tempTracks;
+        },
+        'storePlaylist': function (playlist) {
+
+
         }
     });
 }

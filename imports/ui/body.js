@@ -2,48 +2,41 @@ import {Meteor} from 'meteor/meteor';
 import {Template} from 'meteor/templating';
 import {ReactiveDict} from 'meteor/reactive-dict';
 
-import {Tracks} from '../api/tracks.js';
+import {Playlists} from '../api/playlists.js';
 import {Session} from 'meteor/session';
 
 
-import './task.js';
 import './track.js';
 import './body.html';
 import './track.html';
 import './playlistitem.html'
 
-Template.body.onCreated(function bodyOnCreated() {
+Template.mainLayout.onCreated(function bodyOnCreated() {
+    console.log("hello");
     this.state = new ReactiveDict();
-    Meteor.subscribe('tracks');
-
-    var song = {
-        songname: 'Chantaje',
-        artist: 'Shakira',
-        thumbnail: {
-            height: 640,
-            url: 'https://i.scdn.co/image/c422311a3e1eba6fa97fc2286be73cc124149dcb',
-            width: 640
-        },
-        songid: '1WniHvhq9zTkny0WvGXX8o'
-    };
-    Session.set("tempTracks", [ song, song ]);
+    Meteor.subscribe('playlists');
 });
 
-Template.body.helpers({
-    tracks() {
-        return Tracks.find({}, {sort: {createdAt: -1}});
+Template.mainLayout.helpers({
+    sessionActive(){
+        return Playlists.findOne({name: Session.get("playListName")});
     },
-    incompleteCount() {
-        return Tracks.find({checked: {$ne: true}}).count();
+    playList() {
+        if (Playlists.findOne({name: Session.get("playListName")})) {
+            return Playlists.findOne({name: Session.get("playListName")}, {sort: {createdAt: -1}}).tracks;
+        }
     },
     tempTracks(){
         var tracks = Session.get("tempTracks");
         console.log(tracks);
         return tracks;
+    },
+    playListName () {
+        return Session.get("playListName");
     }
 });
 
-Template.body.events({
+Template.mainLayout.events({
     'submit .new-task'(event) {
         // Prevent default browser form submit
         event.preventDefault();

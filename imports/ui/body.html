@@ -1,43 +1,58 @@
-<body>
-<div class="gradient">
-    <button class="loginOutButton">Sign out</button>
-    <div style="float: right;">
-        <span style="margin-left:15px; font-size: 12px; opacity: 0.5;">Listening on:</span>
-        <div class="dropdown">
-            <button class="dropbtn">iPhone</button>
-            <div class="dropdown-content">
-                <a href="#">Macbook Pro</a>
-                <a href="#">Playstation</a>
+<template name="mainLayout">
+    <body>
+    <div class="gradient">
+        {{> loginButtons}}
+        <div style="float: right;">
+            <span style="margin-left:15px; font-size: 12px; opacity: 0.5;">Listening on:</span>
+            <div class="dropdown">
+                <button class="dropbtn">iPhone</button>
+                <div class="dropdown-content">
+                    <a href="#">Macbook Pro</a>
+                    <a href="#">Playstation</a>
+                </div>
             </div>
         </div>
-    </div>
-  <div class="container">
-    <header>
-      <h1>Playlist name</h1>
-        <p class="now-playing-small-text">{{ numberOfSongs }} • {{ totalHours }} and {{ totalMinutes }}</p>
-        <form class="new-task">
-          <input class="searchbar" type="text" name="text" placeholder="Search for tracks to add" />
-        </form>
+        <div class="container">
+            {{#if sessionActive}}
+                <header>
 
-        </header>
+                    <h1>{{playListName}}</h1>
+                    <p class="now-playing-small-text">{{ numberOfSongs }} • {{ totalHours }} and {{ totalMinutes }}</p>
+                    <form class="new-task">
+                        <input class="searchbar" type="text" name="text" placeholder="Search for tracks to add"/>
+                    </form>
+                </header>
 
-        <ul class="tempTracks">
-            {{#each tempTracks}}
-                {{> track}}
-            {{/each}}
-        </ul>
 
-        <div class="now-playing">
-            <span class="now-playing-small-text" style="font-size: 12px;">NOW PLAYING</span>
-            <h2 class="now-playing-big-text">Hips don't lie</h2>
-            <span class="now-playing-small-text">Shakira</span>
-            <img class="now-playing-img" />
+
+
+                <ul class="tempTracks">
+                    {{#each tempTracks}}
+                        {{> track}}
+                    {{/each}}
+                </ul>
+
+                <div class="now-playing">
+                    <span class="now-playing-small-text" style="font-size: 12px;">NOW PLAYING</span>
+                    <h2 class="now-playing-big-text">Hips don't lie</h2>
+                    <span class="now-playing-small-text">Shakira</span>
+                    <img class="now-playing-img"/>
+                </div>
+                <section id="cd-timeline" class="cd-container">
+                    {{#each playList}}
+                        {{> playlistitem}}
+                    {{/each}}
+                </section>
+
+
+            {{else}}
+                <header>
+                    <h2>No session running!</h2>
+                    {{> loginButtons}}
+                </header>
+
+            {{/if}}
         </div>
-        <section id="cd-timeline" class="cd-container">
-            {{#each tracks}}
-                {{> playlistitem}}
-            {{/each}}
-        </section>
     </div>
-</div>
-</body>
+    </body>
+</template>

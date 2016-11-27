@@ -9,15 +9,11 @@ Template.track.events({
         event.preventDefault();
         console.log(this);
         console.log("You clicked a .player element");
-        // Add the song to the Tracks database
-        Meteor.call('tracks.insert',this);
+        // Add the song to the Playlists database
+        Meteor.call('Playlists.insertSong',Session.get("playListName"),this);
+        Session.set("tempTracks",null);
 
     }
 });
 
-Template.track.helpers({
-    updateTimer() {
-
-    }
-});
 
